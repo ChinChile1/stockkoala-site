@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Deletion Policy — StockKoala</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo"><a href="/" style="text-decoration:none;color:inherit">StockKoala</a></div>
+      <nav>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="data-deletion.html">Data Deletion</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="policy">
+    <div class="container">
+      <h1>Data Deletion Policy</h1>
+      <p class="updated">Last Updated: March 21, 2026</p>
+
+      <h2>Overview</h2>
+      <p>This policy describes how StockKoala handles data deletion when you uninstall the App or request removal of your data. We are committed to giving you full control over your information.</p>
+
+      <h2>Automatic Deletion on Uninstall</h2>
+      <p>When you uninstall StockKoala from your Shopify store, the following data is <strong>automatically and immediately deleted</strong>:</p>
+      <ul>
+        <li>Shopify session and authentication data (access tokens, admin user info)</li>
+        <li>OAuth credentials and refresh tokens</li>
+      </ul>
+
+      <h2>Data Retained After Uninstall</h2>
+      <p>The following data is <strong>retained after uninstall</strong> to allow for reinstallation without data loss and to support any outstanding data export needs:</p>
+      <ul>
+        <li>Employee records (names, badge IDs, access permissions)</li>
+        <li>Inventory audit logs (check-in history, action records)</li>
+        <li>Purchase orders and line items</li>
+        <li>Forecast configurations and supplier profiles</li>
+        <li>Batch expiration records and allocation history</li>
+        <li>Inventory snapshots (auto-deleted after 180 days regardless)</li>
+        <li>Packaging supply records</li>
+        <li>Schedule rules and app configuration settings</li>
+      </ul>
+
+      <h2>Requesting Full Data Deletion</h2>
+      <p>To request complete deletion of all your data, email us at <strong>support@stockkoala.com</strong> with:</p>
+      <ul>
+        <li><strong>Subject line:</strong> "Data Deletion Request"</li>
+        <li><strong>Your Shopify store URL</strong> (e.g., your-store.myshopify.com)</li>
+        <li><strong>Confirmation</strong> that you want all data permanently deleted</li>
+      </ul>
+      <p>We will process your request within <strong>30 days</strong> and confirm deletion via email.</p>
+
+      <h2>What Full Deletion Includes</h2>
+      <p>Upon a verified deletion request, we will permanently remove:</p>
+      <ul>
+        <li>All employee records and badge configurations</li>
+        <li>All inventory audit log entries</li>
+        <li>All purchase orders, line items, and attachments</li>
+        <li>All forecast configurations, supplier profiles, and supplier tags</li>
+        <li>All batch expiration records and order allocation history</li>
+        <li>All inventory snapshots</li>
+        <li>All app configuration and settings data</li>
+        <li>All cached variant and sales data</li>
+        <li>All schedule rules, forecast tags, and packaging supply records</li>
+        <li>All dismissed alert records</li>
+      </ul>
+      <p>After deletion, this data <strong>cannot be recovered</strong>.</p>
+
+      <h2>Shopify GDPR/Privacy Webhooks</h2>
+      <p>StockKoala supports Shopify's mandatory privacy webhooks:</p>
+      <ul>
+        <li><strong>Customer Data Request:</strong> Since we do not store end-customer personal information (names, emails, addresses, payment details), there is no customer data to report.</li>
+        <li><strong>Customer Data Erasure:</strong> Since we do not store end-customer personal information, no action is required. Order IDs stored in batch allocation records are anonymized or deleted upon request.</li>
+        <li><strong>Shop Data Erasure:</strong> Upon receiving this webhook (triggered 48 hours after uninstall), all remaining store data is permanently deleted.</li>
+      </ul>
+
+      <h2>Automatic Data Expiration</h2>
+      <table>
+        <thead>
+          <tr><th>Data Type</th><th>Retention</th><th>Deletion Method</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Inventory snapshots</td><td>180 days</td><td>Daily cron job</td></tr>
+          <tr><td>Dismissed alerts</td><td>3 days</td><td>Cleaned on page load</td></tr>
+          <tr><td>In-memory cache</td><td>5 minutes</td><td>Auto-expiry (TTL)</td></tr>
+          <tr><td>Database variant cache</td><td>Refreshed daily</td><td>Overwritten by cron job</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Contact</h2>
+      <p>For data deletion requests or questions about this policy:</p>
+      <p><strong>StockKoala</strong><br>Email: support@stockkoala.com</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">StockKoala</div>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="data-deletion.html">Data Deletion</a>
+          <a href="support.html">Support</a>
+        </div>
+        <div class="footer-contact">support@stockkoala.com</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

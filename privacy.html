@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — StockKoala</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo"><a href="/" style="text-decoration:none;color:inherit">StockKoala</a></div>
+      <nav>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="data-deletion.html">Data Deletion</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="policy">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last Updated: March 21, 2026</p>
+
+      <h2>Introduction</h2>
+      <p>This Privacy Policy describes how StockKoala ("the App", "we", "us", or "our") collects, uses, and shares information when you install and use our application through the Shopify platform.</p>
+      <p>By installing and using the App, you agree to the collection and use of information in accordance with this policy.</p>
+
+      <h2>Information We Collect</h2>
+
+      <h3>Information from Shopify</h3>
+      <p>When you install the App, we access certain information from your Shopify store through the Shopify API, using the permissions you grant during installation:</p>
+      <ul>
+        <li><strong>Product and variant data:</strong> Product titles, variant names, SKUs, prices, tags, images, and metafields (specifically expiration date metafields)</li>
+        <li><strong>Inventory data:</strong> Inventory levels, available quantities, on-hand quantities, and committed quantities at your store locations</li>
+        <li><strong>Location data:</strong> Store location names and identifiers</li>
+        <li><strong>Order data:</strong> Order IDs and display names (e.g., "#1234"), line item variant IDs and quantities for batch allocation tracking during order fulfillment. <strong>We do not access or store customer names, emails, shipping addresses, payment information, or any other customer personal data from orders.</strong></li>
+      </ul>
+
+      <h3>Information You Provide</h3>
+      <ul>
+        <li><strong>Employee names and badge IDs:</strong> When you create employee profiles within the App for inventory check-in and access control purposes</li>
+        <li><strong>Inventory audit actions:</strong> When employees perform inventory checks, we log the employee name, action type, quantities, and timestamp</li>
+        <li><strong>Purchase order details:</strong> Supplier names, contact information, product quantities, and pricing that you enter when creating purchase orders</li>
+        <li><strong>Configuration settings:</strong> Thresholds, preferences, and operational settings you configure within the App</li>
+      </ul>
+
+      <h3>Shopify Admin Session Data</h3>
+      <p>When authorized Shopify admin users access the App, Shopify provides us with session information including:</p>
+      <ul>
+        <li>Shopify user ID</li>
+        <li>First name, last name, and email address</li>
+        <li>Account role (owner, collaborator)</li>
+        <li>OAuth access tokens for API communication</li>
+      </ul>
+      <p>This data is used solely for authenticating your access to the App and making authorized API calls to your Shopify store on your behalf.</p>
+
+      <h2>How We Use Your Information</h2>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li><strong>Provide inventory management functionality:</strong> Track inventory levels, perform audit checks, generate purchase orders, and manage batch expiration dates</li>
+        <li><strong>Display reports and analytics:</strong> Generate inventory health scorecards, shrinkage analysis, sales velocity forecasts, and audit log reports</li>
+        <li><strong>Manage employee access:</strong> Authenticate employees via badge IDs and enforce page-level access controls</li>
+        <li><strong>Write metafield data:</strong> Update product expiration date metafields on your Shopify products to reflect current batch information</li>
+        <li><strong>Process webhooks:</strong> Respond to order fulfillment and cancellation events to maintain accurate batch allocation records</li>
+      </ul>
+
+      <h2>Data Storage and Retention</h2>
+
+      <h3>Where We Store Data</h3>
+      <p>All data is stored in a PostgreSQL database hosted on Render.com, located in the United States (Virginia region). The App itself is also hosted on Render.com.</p>
+
+      <h3>Data Retention</h3>
+      <ul>
+        <li><strong>Inventory snapshots:</strong> Retained for 180 days, then automatically deleted</li>
+        <li><strong>Dismissed alerts:</strong> Automatically expire and are deleted after 3 days</li>
+        <li><strong>Inventory audit logs:</strong> Retained indefinitely for historical reporting purposes</li>
+        <li><strong>Batch allocation records:</strong> Retained indefinitely for traceability</li>
+        <li><strong>Employee records:</strong> Retained until you deactivate or delete them</li>
+        <li><strong>Session data:</strong> Deleted when the App is uninstalled from your Shopify store</li>
+        <li><strong>Cached variant data:</strong> In-memory cache with a 5-minute time-to-live; database-level cache refreshed daily</li>
+      </ul>
+
+      <h3>Data Deletion on Uninstall</h3>
+      <p>When you uninstall the App from your Shopify store, all Shopify session and authentication data is immediately deleted. To request deletion of all remaining data (audit logs, employee records, purchase orders, etc.), please contact us using the information below.</p>
+
+      <h2>Data Sharing and Third Parties</h2>
+      <p>We do <strong>not</strong> sell, rent, or share your data with any third parties. The App communicates exclusively with:</p>
+      <ul>
+        <li><strong>Shopify:</strong> Via the authenticated Admin GraphQL API to read and write store data on your behalf</li>
+        <li><strong>Render.com:</strong> Our hosting and database provider, which processes data according to their own privacy and security policies</li>
+      </ul>
+      <p>We do not use any third-party analytics, advertising, or tracking services within the App.</p>
+
+      <h2>Cookies and Local Storage</h2>
+      <p>The App does not set cookies directly. Shopify's App Bridge framework manages authentication cookies for admin session handling.</p>
+      <p>The App uses browser <strong>localStorage</strong> to persist the currently logged-in employee session (employee name and login timestamp) for convenience across page reloads. This data is cleared on employee logout or after a configurable inactivity timeout (default: 15 minutes).</p>
+
+      <h2>Security</h2>
+      <p>We implement the following measures to protect your data:</p>
+      <ul>
+        <li>All data is transmitted over HTTPS/TLS encryption</li>
+        <li>Shopify API access tokens are stored securely in our database and are never exposed to the client</li>
+        <li>Webhook payloads are verified using Shopify's built-in HMAC signature validation</li>
+        <li>Employee settings PINs are hashed before storage</li>
+        <li>The daily cron endpoint is protected by a secret key</li>
+        <li>Employee access is controlled via configurable page-level permissions</li>
+      </ul>
+
+      <h2>Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li><strong>Access:</strong> View all data the App stores about your store and employees through the App's interface</li>
+        <li><strong>Correction:</strong> Update or correct employee information, configuration settings, and other data at any time</li>
+        <li><strong>Deletion:</strong> Request deletion of your data by contacting us</li>
+        <li><strong>Data Portability:</strong> Export audit log data via the CSV export feature in the Reports section</li>
+      </ul>
+
+      <h2>Shopify Data Protection</h2>
+      <p>The App complies with Shopify's API Terms of Service and data protection requirements. We only request the minimum API scopes necessary:</p>
+      <table>
+        <thead>
+          <tr><th>Scope</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>read_products</td><td>Fetch product and variant information for inventory tracking</td></tr>
+          <tr><td>write_products</td><td>Write expiration date metafields to product variants</td></tr>
+          <tr><td>read_inventory</td><td>Read inventory levels at store locations</td></tr>
+          <tr><td>write_inventory</td><td>Reserved for future inventory adjustment features</td></tr>
+          <tr><td>read_locations</td><td>Identify store locations for inventory tracking</td></tr>
+          <tr><td>read_orders</td><td>Process order fulfillment events for batch allocation</td></tr>
+        </tbody>
+      </table>
+
+      <h2>GDPR and CCPA Compliance</h2>
+      <p>For merchants and their customers located in the European Union or California:</p>
+      <ul>
+        <li>We process data as a <strong>data processor</strong> on behalf of the Shopify merchant (data controller)</li>
+        <li>We do not directly collect or store end-customer personal information</li>
+        <li>We support Shopify's mandatory GDPR webhooks for customer data requests, customer data erasure, and shop data erasure</li>
+        <li>To exercise any data subject rights, please contact us at the address below</li>
+      </ul>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by updating the "Last Updated" date at the top of this policy. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, your data, or wish to request data deletion, please contact:</p>
+      <p><strong>StockKoala</strong><br>Email: support@stockkoala.com</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">StockKoala</div>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="data-deletion.html">Data Deletion</a>
+          <a href="support.html">Support</a>
+        </div>
+        <div class="footer-contact">support@stockkoala.com</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
