@@ -33,6 +33,25 @@ header .container {
   font-size: 22px;
   font-weight: 700;
   color: #1a1a2e;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  height: 36px;
+  width: auto;
+}
+
+.hero-logo {
+  width: 220px;
+  height: auto;
+  margin-bottom: 32px;
+}
+
+.footer-logo {
+  height: 28px;
+  width: auto;
 }
 
 nav a {
