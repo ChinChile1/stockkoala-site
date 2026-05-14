@@ -218,6 +218,201 @@ nav a:hover {
   color: #0d101d;
 }
 
+/* Pricing */
+.pricing-hero {
+  padding: 80px 0 24px;
+  text-align: center;
+}
+
+.pricing-hero h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #0d101d;
+}
+
+.pricing {
+  padding: 24px 0 80px;
+}
+
+.pricing-container {
+  max-width: 1280px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.plan {
+  background: #fff;
+  border: 1px solid #e4e8e4;
+  border-radius: 12px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.plan.featured {
+  border-color: #6bb55b;
+  box-shadow: 0 0 0 1px #6bb55b inset;
+}
+
+.plan-head {
+  margin-bottom: 20px;
+}
+
+.plan-name {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.plan-price .amount {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0d101d;
+}
+
+.plan-price .per {
+  font-size: 14px;
+  color: #555;
+}
+
+.plan-trial {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6bb55b;
+  min-height: 18px;
+}
+
+.plan-group {
+  border-top: 1px solid #eef0ee;
+  padding: 0;
+}
+
+details.plan-group > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 24px 10px 0;
+  position: relative;
+  user-select: none;
+}
+
+details.plan-group > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.plan-group > summary::after {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 20px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #888;
+  border-bottom: 2px solid #888;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+
+details.plan-group[open] > summary::after {
+  transform: rotate(-135deg);
+  top: 24px;
+}
+
+.plan-group-title {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.plan-group-sub {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  font-style: italic;
+}
+
+.plan-group ul {
+  list-style: none;
+  padding: 0 0 12px;
+  margin: 0;
+}
+
+.plan-group li {
+  font-size: 14px;
+  color: #0d101d;
+  padding: 5px 0 5px 22px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.plan-group li.yes::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  color: #6bb55b;
+  font-weight: 700;
+}
+
+.plan-group li.no {
+  color: #c0c4c0;
+}
+
+.plan-group li.no::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  color: #c0c4c0;
+}
+
+.plan-group li .meta {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  font-weight: 400;
+}
+
+.plan-group.muted .plan-group-title {
+  color: #b0b4b0;
+}
+
+.plan-cta {
+  margin-top: auto;
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 15px;
+}
+
+.pricing-note {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  margin-top: 32px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Footer */
 footer {
   border-top: 1px solid #e4e8e4;
@@ -286,5 +481,19 @@ footer {
   .footer-content {
     flex-direction: column;
     text-align: center;
+  }
+
+  .pricing-hero h1 {
+    font-size: 28px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
